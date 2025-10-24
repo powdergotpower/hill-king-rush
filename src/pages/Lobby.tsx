@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Leaderboard from "@/components/game/Leaderboard";
-import Scene3D from "@/components/game/Scene3D";
+import MapView from "@/components/game/MapView";
 import { Play, Settings, LogOut, Map } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -42,7 +42,7 @@ const Lobby = () => {
               </div>
               
               <div className="aspect-video bg-secondary/30 rounded-lg overflow-hidden border border-primary/10">
-                <Scene3D />
+                <MapView showOverlay={true} />
               </div>
               
               <div className="mt-4 grid grid-cols-2 gap-4">

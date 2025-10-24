@@ -1,73 +1,212 @@
-# Welcome to your Lovable project
+# 🎮 Rock King - Mobile 3D Shooter
 
-## Project info
+**Conquest Canyon** - Fast-paced vertical combat shooter optimized for mobile devices.
 
-**URL**: https://lovable.dev/projects/a57f0064-6695-4800-bb6b-00c38318324e
+![Rock King](https://img.shields.io/badge/Platform-Android-green)
+![Build](https://img.shields.io/badge/Build-Capacitor-blue)
+![Framework](https://img.shields.io/badge/Framework-React-61dafb)
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🎯 Game Overview
 
-**Use Lovable**
+**Objective:** Control "King's Hill" - the central rock formation. The player with the most time on the hill wins!
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/a57f0064-6695-4800-bb6b-00c38318324e) and start prompting.
+**Features:**
+- 8-player battles (1 Human + 7 AI Bots)
+- Vertical combat with jumping mechanics
+- Dynamic weapon system with zoom mechanics
+- Mobile-optimized touch controls
+- 5-minute fast-paced matches
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🏗️ Tech Stack
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Frontend:** React + TypeScript + Vite
+- **Styling:** Tailwind CSS + shadcn/ui
+- **3D Graphics:** Three.js + React Three Fiber
+- **Mobile:** Capacitor (iOS & Android)
+- **State Management:** TanStack Query
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## 🚀 Quick Start
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Development
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+```bash
+# Install dependencies
+npm install
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Visit `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Building Android APK
 
-**Use GitHub Codespaces**
+See detailed instructions in **[BUILD_INSTRUCTIONS.md](BUILD_INSTRUCTIONS.md)**
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+**Quick build:**
+```bash
+npm run build
+npx cap add android
+npx cap sync android
+npx cap open android
+```
 
-## What technologies are used for this project?
+Then build APK in Android Studio.
 
-This project is built with:
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 📱 Features
 
-## How can I deploy this project?
+### ✅ Implemented
+- Mobile-first responsive design
+- Landscape orientation enforcement
+- Game lobby with leaderboard
+- Interactive 3D map preview
+- Game HUD with health, timer, ammo
+- Conquest Canyon map rendering
+- Google Sign-In UI
+- Android APK build pipeline
 
-Simply open [Lovable](https://lovable.dev/projects/a57f0064-6695-4800-bb6b-00c38318324e) and click on Share -> Publish.
+### 🎯 Ready for Implementation
+- 3D player movement and controls
+- Weapon shooting mechanics
+- AI bot behaviors
+- Physics and collision detection
+- Network multiplayer (optional)
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## 🎮 Controls (Planned)
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- **Left Joystick:** Movement
+- **Right Joystick:** Camera/Aim
+- **Jump Button:** Jump to elevated positions
+- **Shoot Button:** Fire weapon
+- **Weapon Switch:** Cycle through weapons
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+---
+
+## 🗺️ Map Details
+
+**Conquest Canyon:**
+- Central King's Hill (main objective)
+- 25-30 buildings for cover
+- 4-5 secondary rock clusters
+- Multiple ramps and platforms
+- 360° tactical sightlines
+
+---
+
+## 🛠️ Development Roadmap
+
+### Phase 1: Infrastructure ✅ COMPLETE
+- [x] Mobile UI/UX
+- [x] Navigation system
+- [x] Capacitor setup
+- [x] Build pipeline
+
+### Phase 2: Gameplay (Next)
+- [ ] Player controller with touch input
+- [ ] Weapon mechanics
+- [ ] AI bot implementation
+- [ ] Physics engine integration
+
+### Phase 3: Polish
+- [ ] Sound effects and music
+- [ ] Visual effects and particles
+- [ ] Match statistics
+- [ ] Achievement system
+
+---
+
+## 📦 Project Structure
+
+```
+rock-king/
+├── src/
+│   ├── components/
+│   │   ├── game/          # Game-specific components
+│   │   │   ├── MapView.tsx
+│   │   │   ├── GameHUD.tsx
+│   │   │   ├── Leaderboard.tsx
+│   │   │   └── Scene3D.tsx
+│   │   └── ui/            # UI components (shadcn)
+│   ├── pages/
+│   │   ├── Index.tsx      # Landing page
+│   │   ├── Lobby.tsx      # Game lobby
+│   │   └── Game.tsx       # Main game
+│   ├── assets/            # Images and static files
+│   └── lib/               # Utilities
+├── android/               # Android native project (after cap add)
+├── capacitor.config.ts    # Capacitor configuration
+└── BUILD_INSTRUCTIONS.md  # Detailed build guide
+```
+
+---
+
+## 🎨 Design System
+
+**Color Palette:**
+- Primary: Desert Sand (#b89968)
+- Secondary: Military Dark Gray
+- Accent: Objective Green
+- Danger: Alert Red
+
+**Typography:**
+- Headings: Bold, tactical style
+- Body: Clear, readable
+- UI Text: Monospace for stats
+
+---
+
+## 🔧 Configuration
+
+### Capacitor Config
+Edit `capacitor.config.ts` for app settings:
+- App ID: `app.lovable.a57f006466954800bb6b00c38318324e`
+- App Name: `Rock King`
+- Server URL: Points to Lovable preview for hot reload
+
+### Environment
+No environment variables needed for basic functionality.
+
+---
+
+## 📖 Documentation
+
+- [Build Instructions](BUILD_INSTRUCTIONS.md)
+- [Lovable Documentation](https://docs.lovable.dev/)
+- [Capacitor Docs](https://capacitorjs.com/)
+
+---
+
+## 🤝 Contributing
+
+This is a Lovable project! Make changes by:
+1. Prompting in Lovable
+2. Using Visual Edits
+3. Editing code directly after export to GitHub
+
+---
+
+## 📄 License
+
+This project was created with Lovable.
+
+---
+
+## 🎮 Lovable Project
+
+**URL:** https://lovable.dev/projects/a57f0064-6695-4800-bb6b-00c38318324e
+
+Built with ❤️ using [Lovable](https://lovable.dev/)
+
+---
+
+**Ready to dominate King's Hill? Build your APK and start playing!** 🏆
