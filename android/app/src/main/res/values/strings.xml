@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Rock King</string>
+    <string name="title_activity_main">Rock King</string>
+    <string name="package_name">app.lovable.a57f006466954800bb6b00c38318324e</string>
+    <string name="custom_url_scheme">app.lovable.a57f006466954800bb6b00c38318324e</string>
+</resources>
