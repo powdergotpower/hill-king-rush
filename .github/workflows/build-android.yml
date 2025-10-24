@@ -20,11 +20,11 @@ jobs:
       with:
         node-version: '20'
 
-    # 3. Install dependencies
+    # 3. Install npm dependencies
     - name: Install npm packages
       run: npm install
 
-    # 4. Build web app (for Capacitor)
+    # 4. Build the web assets (for Capacitor)
     - name: Build web app
       run: npm run build
 
@@ -43,27 +43,23 @@ jobs:
     - name: Setup Android SDK
       uses: android-actions/setup-android@v2
 
-    # 8. Add Android platform (Capacitor)
-    - name: Add Android platform
-      run: npx cap add android || echo "Platform already added"
-
-    # 9. Sync Capacitor project
+    # 8. Sync Capacitor project
     - name: Sync Capacitor
       run: npx cap sync android
 
-    # 10. Clean Android build
+    # 9. Clean Android build
     - name: Clean Android Build
       run: |
         cd android
         ./gradlew clean
 
-    # 11. Build Android APK
+    # 10. Build Android APK
     - name: Build Android APK
       run: |
         cd android
         ./gradlew assembleDebug
 
-    # 12. Upload APK as artifact
+    # 11. Upload APK as artifact
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
