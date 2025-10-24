@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
-apply from: "variables.gradle"
+// ✅ Correct path to variables.gradle (project root)
+apply from: "../variables.gradle"
 
 android {
     namespace "app.lovable.a57f006466954800bb6b00c38318324e"
