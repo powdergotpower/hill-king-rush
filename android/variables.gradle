@@ -1,7 +1,10 @@
+// Project-wide dependency and SDK versions
 ext {
     minSdkVersion = 23
     compileSdkVersion = 35
     targetSdkVersion = 35
+
+    // AndroidX Libraries
     androidxActivityVersion = '1.9.2'
     androidxAppCompatVersion = '1.7.0'
     androidxCoordinatorLayoutVersion = '1.2.0'
@@ -9,8 +12,12 @@ ext {
     androidxFragmentVersion = '1.8.4'
     coreSplashScreenVersion = '1.0.1'
     androidxWebkitVersion = '1.12.1'
+
+    // Testing
     junitVersion = '4.13.2'
     androidxJunitVersion = '1.2.1'
     androidxEspressoCoreVersion = '3.6.1'
+
+    // Cordova
     cordovaAndroidVersion = '10.1.1'
 }
